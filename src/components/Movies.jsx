@@ -7,9 +7,14 @@ export const Movies = () => {
   const handleSearch = (e) => {
     setSearchInput(e.target.value);
   };
-  const filteredData = data.filter((item) =>
-    item.name.toLowerCase().includes(searchInput.toLowerCase())
+  const filteredData = data.filter(
+    (item) =>
+      item.name.toLowerCase().includes(searchInput.toLowerCase()) ||
+      item.description.toLowerCase().includes(searchInput.toLowerCase()) ||
+      item.type.toLowerCase().includes(searchInput.toLowerCase()) ||
+      item.category.toLowerCase().includes(searchInput.toLowerCase())
   );
+
   return (
     <div className='container max-w-7xl mx-auto px-10 py-20 '>
       <Category />
