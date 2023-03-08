@@ -1,31 +1,25 @@
 import React from 'react';
 import { useState } from 'react';
 import { FaHeart, FaRegHeart } from 'react-icons/fa';
+import MoviesCard from './MoviesCard';
 
-export const Row = ({ title }) => {
+export const Row = ({ title,color }) => {
   const [like, setLike] = useState(false);
   return (
     <>
-      <h1 className='text-white font-bold md:text-xl p-4'>{title}</h1>
+      <h1 className={`text-white font-bold text-xl p-4 ${color}`}>{title}</h1>
       <div className='flex  relative items-center ml-5'>
-        <div id={'slide'}>
+        <div
+          id={'slide'}
+          className='w-full h-full overflow-x-scroll whitespace-nowrap scroll-smooth scrollbar-hide relative snap-mandatory snap-x'
+        >
           {/* loops through data */}
-
-          <div className='w-[160px] sm:w-[200px] md:w-[240px] lg:w-[289px] inline-block cursor-pointer relative p-2'>
-            <img className='w-full h-auto block' src='./web5.png' alt='' />
-            <div className='absolute top-0 left-0 w-full h-full hover:bg-black/80 opacity-0 hover:opacity-100 text-white'>
-              <p className='white-space-normal text-xs md:text-sm font-bold flex justify-center items-center h-full text-center'>
-                NETFLIX
-              </p>
-              <p>
-                {like ? (
-                  <FaHeart className='absolute top-4 left-4 text-gray-300' />
-                ) : (
-                  <FaRegHeart className='absolute top-4 left-4 text-gray-300' />
-                )}
-              </p>
-            </div>
-          </div>
+          <MoviesCard />
+          <MoviesCard />
+          <MoviesCard />
+          <MoviesCard />
+          <MoviesCard />
+          <MoviesCard />
         </div>
       </div>
     </>

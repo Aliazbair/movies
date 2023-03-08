@@ -11,7 +11,7 @@ export const Category = () => {
             key={id}
             className='shadow-sm shadow-indigo-500 p-1 hover:text-indigo-700  hover:scale-105 rounded  transition-all duration-300 cursor-pointer'
           >
-            <span className='text-sm py-2 px-1 '>{category}</span>
+            <span className='text-sm py-2 px-1 text-white'>{category}</span>
           </div>
         ))}
       </div>

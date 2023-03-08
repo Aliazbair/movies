@@ -6,10 +6,10 @@ import { Home } from './pages/Home';
 
 function App() {
   return (
-    <div className=''>
+    <div className='bg-gray-900'>
       <Navbar />
       <Routes>
-        <Route path='/home' element={<Home />} />
+        <Route path='/' element={<Home />} />
         <Route path='/movies' element={<Movies />} />
       </Routes>
       {/* <Movies/> */}

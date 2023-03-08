@@ -16,7 +16,7 @@ export const Movies = () => {
   );
 
   return (
-    <div className='container max-w-7xl mx-auto px-10 py-20 '>
+    <div className='container max-w-7sxl mx-auto px-10 py-20 '>
       <Category />
       {/* input search */}
       <div className='mt-5'>
@@ -28,26 +28,28 @@ export const Movies = () => {
           onChange={handleSearch}
         />
       </div>
-      <div className='grid gap-5 grid-cols-2 md:grid-cols-3 xl:grid-cols-4 mt-10'>
+      <div className='grid gap-5  md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-4 mt-10 px-1'>
         {filteredData.map(
           ({ id, name, description, image, type, category }) => (
             <div
               key={id}
-              className='shadow-sm shadow-red-200 p-2 bg-gray-800 rounded'
+              className='shadow shadow-gray-200 p-s2 bg-gray-200 rounded overflow-hidden'
             >
               <img
-                src='https://th.bing.com/th/id/OIP.Vg7gE_hwMujcoiqNbwekmAHaF7?w=228&h=182&c=7&r=0&o=5&pid=1.7'
+                src='./Metaverse.webp'
                 alt=''
                 className='w-full object-cover'
               />
-              <h2 className='text-gray-200 font-semibold font-mono text-sm md:text-xl '>
+              <h2 className='text-gray-700 font-semibold font-mono text-sm md:text-xl px-2'>
                 {name}
               </h2>
-              <p className='text-gray-400 text-xl truncate'>{description}</p>
-              <div className='flex items-center justify-between flex-wrap '>
-                <span className='text-red-800'>{type}</span>
+              <p className='text-gray-400 text-xl truncates px-1'>
+                {description}
+              </p>
+              {/* <div className='flex items-center justify-between flex-wrap px-2'>
+                <span className='text-red-800 '>{type}</span>
                 <span className='text-red-800'>{category}</span>
-              </div>
+              </div> */}
             </div>
           )
         )}
